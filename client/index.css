@@ -1,0 +1,97 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the background color and font color for the entire page */
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Add styles for headings */
+h1 {
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 2.5em;
+  position: relative;
+  overflow: hidden;
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: 100%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(to left, #BB86FC, transparent);
+  animation: trail 4s infinite;
+}
+
+@keyframes trail {
+  0% {
+    right: 100%;
+    background: linear-gradient(to left, #BB86FC, transparent);
+  }
+  50% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+    background: linear-gradient(to right, #BB86FC, transparent);
+  }
+}
+
+#cors {
+  color: #BB86FC;
+}
+/* Add styles for buttons */
+button {
+  display: block;
+  width: 200px;
+  height: 45px;
+  margin: 20px auto;
+  background-color: #BB86FC;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+button:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-45deg);
+}
+
+button:hover:before {
+  left: 150%;
+  transition: left 0.7s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Add styles for containers */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
